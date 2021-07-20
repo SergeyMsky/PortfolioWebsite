@@ -1,7 +1,6 @@
 @import "null.scss";
 @import "preloader.scss";
 @import "cursor.scss";
-@import "popup-contact.scss";
 
 body{
     font-family: 'GFS Didot', serif;
@@ -134,8 +133,8 @@ body::after{
 .title-column{
     position: absolute;
     z-index: 5;
-    top: calc(50vh - 258px);
-    left: -150px;
+    top: calc(50vh - 268px);
+    left: -130px;
 
     display: flex;
     flex-direction: column;
@@ -511,7 +510,7 @@ body::after{
     margin-left: 15px;
 }
 .footer__contacts span:hover{
-    animation: icon3d 200ms 5;
+    animation: icon3d 200ms 2;
 }
 @keyframes icon3d{
     0%{
@@ -529,4 +528,33 @@ body::after{
     100%{
         text-shadow: -2px 0 rgba(244,67,54,1), 2px -1px rgba(33,150,243,1);;
     }
+}
+
+.footer__download{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+
+    color: #007fe0;
+}
+.download{
+    position: relative;
+
+    padding-bottom: 2px;
+}
+.download::before{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 0;
+    height: 1.5px;
+
+    content: '';
+    transition: .3s;
+
+    background-color: #000;
+}
+.download:hover::before{
+    width: 100%;
 }
