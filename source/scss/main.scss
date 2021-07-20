@@ -402,17 +402,16 @@ body::after{
 .about__content{
     position: absolute;
     top: calc(50vh - 300px);
-    left: calc(50% - 600px);
+    left: 17%;
 
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-    line-height: 1.4;
+    font-size: 17px;
+    line-height: 1.3;
     color: #000;
 
     text-align: justify;
     display: flex;
 
-    width: 900px;
+    width: 450px;
     height: 600px;
 }
 .content-about{
@@ -420,13 +419,16 @@ body::after{
 
     overflow: hidden;
 
-    padding: 60px 40px;
+    padding: 60px 60px 20px;
 
-    background-color: #fff;
+    background-color: #efefef;
 
-    flex: 0 1 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
-.content--style-1::before{
+.content-about::before{
+    font-family: 'Montserrat', sans-serif;
     font-size: 150px;
     font-weight: 700;
 
@@ -439,7 +441,92 @@ body::after{
 
     opacity: .1;
     color: rgb(33,150,243);
+    z-index: 0;
 }
-.content--style-2{
-    background-color: #ccc;
+.content-about::after{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 100px;
+    font-weight: 700;
+
+    position: absolute;
+    bottom: -5%;
+    left: -10%;
+
+    content: 'Contacts';
+    text-transform: uppercase;
+
+    opacity: .1;
+    color: rgb(244,67,54);
+    z-index: 0;
+}
+.content-about p:not(:last-child){
+    margin-bottom: 5px;
+}
+.about__text{
+    margin-bottom: 25px;
+}
+.about__icon{
+    flex-grow: 1;
+}
+.icon__container{
+    font-size: 45px;
+
+    display: flex;
+
+    justify-content: space-between;
+}
+.icon__container span{
+    transition: .3s linear;
+    display: flex;
+}
+.icon-html5:hover{
+    color: #e54c27;
+}
+.icon-css3:hover{
+    color: #0170bc;
+}
+.icon-javascript:hover{
+    color: #f7e018;
+}
+.icon-jquery:hover{
+    color: #1066a9;
+}
+
+.about__footer{
+    z-index: 5;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+}
+.footer__contacts{
+    font-size: 25px;
+
+    display: flex;
+}
+.footer__contacts span{
+    display: flex;
+
+    margin-left: 15px;
+}
+.footer__contacts span:hover{
+    animation: icon3d 200ms 5;
+}
+@keyframes icon3d{
+    0%{
+        text-shadow: 2px 1px rgba(244,67,54,1), -2px -3px rgba(33,150,243,1);;
+    }
+    25%{
+        text-shadow: -2px -3px rgba(244,67,54,1), 2px 1px rgba(33,150,243,1);;
+    }
+    50%{
+        text-shadow: 2px -1px rgba(244,67,54,1), -5px 1px rgba(33,150,243,1);;
+    }
+    75%{
+        text-shadow: -5px -1px rgba(244,67,54,1), -2px -1px rgba(33,150,243,1);;
+    }
+    100%{
+        text-shadow: -2px 0 rgba(244,67,54,1), 2px -1px rgba(33,150,243,1);;
+    }
 }

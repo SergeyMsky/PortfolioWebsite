@@ -74,7 +74,7 @@ if(!preloader.classList.contains('done')){
 		}
 		if(mainPhoto && mainTitleText){
 			mainTitleText.style.opacity = '1',
-			mainPhoto.style.opacity = '.7'
+			mainPhoto.style.opacity = '.8'
 		}
 	}, 500)
 }
