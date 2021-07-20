@@ -1,0 +1,51 @@
+.main__photo{
+    position: absolute;
+    top: calc(50vh - 200px);
+    left: calc(50% - 150px);
+
+    width: 300px;
+    height: 400px;
+
+    transition: 3s all linear;
+
+    opacity: 0;
+}
+
+.title__container{
+    position: absolute;
+    top: calc(50vh - 100px);
+    left: calc(50vw - 400px);
+
+    display: flex;
+    flex-direction: column;
+
+    min-width: 800px;
+    height: 200px;
+
+    opacity: 0;
+
+    justify-content: center;
+    align-items: center;
+}
+.title__box-text{
+    font-family: 'Kurale', serif;
+    
+    display: flex;
+}
+.box-text__itm{
+    display: flex;
+
+    margin-right: 17px;
+
+    color: #fff;
+    text-shadow: #000 0 0 2px;
+
+    flex-wrap: nowrap;
+}
+.box-text__itm span{
+    font-size: 40px;
+
+    position: relative;
+
+    display: inline-block;
+}
