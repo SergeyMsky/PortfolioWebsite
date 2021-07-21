@@ -11,14 +11,25 @@
     pointer-events: none;
 
     border-radius: 50%;
+
+    &.hidden{
+        transform: scale(.0001);
+    }
 }
 #cursor{
     transform: translate(-3px, -3px);
-}
-#cursor.active{
-    transform: scale(0);
 
-    opacity: 0;
+    &.active{
+        transform: scale(0);
+
+        opacity: 0;
+    }
+}
+#cursor.hold .cursor-dot--first{
+    transform: translateX(23px);
+}
+#cursor.hold .cursor-dot--second{
+    transform: translateX(-25px);
 }
 #aura{
     width: 40px;
@@ -28,20 +39,21 @@
 
     border: 1px solid rgba(255,255,255, .5);
     background-color: rgba(255,255,255, .2);
-}
-#aura.active-link{
-    transform: scale(1.4) translate(3px, 3px);
 
-    border: 1.5px solid rgba(255,255,255, .8);
-}
-#aura.active-btn{
-    transform: scale(.5) translate(7px, 7px);
+    &.active-link{
+        transform: scale(1.4) translate(3px, 3px);
 
-    border: 2px solid rgba(255,255,255, .8);
-}
-#cursor.hidden,
-#aura.hidden{
-    transform: scale(.0001);
+        border: 1.5px solid rgba(255,255,255, .8);
+    }
+    &.active-btn{
+        transform: scale(.5) translate(7px, 7px);
+
+        border: 2px solid rgba(255,255,255, .8);
+    }
+    &.hold{
+        transform: scale(.8) translate(4px, 4px);
+        transition: transform .2s ease;
+    }
 }
 .cursor-dot{
     position: absolute;
@@ -55,13 +67,4 @@
     background-color: rgba(255,255,255, 1);
     transition: transform .2s ease;
 }
-#cursor.hold .cursor-dot--first{
-    transform: translateX(23px);
-}
-#cursor.hold .cursor-dot--second{
-    transform: translateX(-25px);
-}
-#aura.hold{
-    transform: scale(.8) translate(4px, 4px);
-    transition: transform .2s ease;
-}
+

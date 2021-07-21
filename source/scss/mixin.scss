@@ -1,0 +1,28 @@
+/////////////////////////////////////////////MIXIN/////////////////////////////////////////////
+
+@mixin adaptive-value($property, $startSize, $minSize) {
+    $maxWidth: 1500;
+    $minWidth: 320;
+    $addSize: $startSize - $minSize;
+    $valueWidth: $maxWidth - $minWidth;
+    #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - #{$minWidth + px}) / #{$valueWidth}));
+}
+@mixin centering($top, $left) {
+	#{top}: calc(50vh - #{$top + px});
+	#{left}: calc(50vw - #{$left + px});
+}
+
+$redColor: rgb(244,67,54); 
+$blueColor: rgb(33,150,243);
+
+$color1: $redColor;
+$color2: $blueColor;
+
+
+$fontMain: 'GFS Didot', serif;
+$fontNav: 'Montserrat', serif;
+$fontText: 'Kurale', serif;
+$fontNumber: 'Abril Fatface', serif;
+
+
+/////////////////////////////////////////////MIXIN/////////////////////////////////////////////

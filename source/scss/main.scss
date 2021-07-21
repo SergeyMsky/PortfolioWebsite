@@ -1,30 +1,16 @@
-/////////////////////////////////////////////MIXIN/////////////////////////////////////////////
-
-@mixin adaptive-value($property, $startSize, $minSize) {
-    $maxWidth: 1500;
-    $minWidth: 320;
-    $addSize: $startSize - $minSize;
-    $valueWidth: $maxWidth - $minWidth;
-    #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - #{$minWidth + px}) / #{$valueWidth}));
-}
-
-/////////////////////////////////////////////MIXIN/////////////////////////////////////////////
-
-
-
 ////////////////////////////////////////////IMPORT/////////////////////////////////////////////
-
+@import "normalize.scss";
 @import "null.scss";
+@import "mixin.scss";
 @import "preloader.scss";
 @import "cursor.scss";
 @import "home.scss";
 @import "about.scss";
 @import "works.scss";
-
 ////////////////////////////////////////////IMPORT/////////////////////////////////////////////
 
 body{
-    font-family: 'GFS Didot', serif;
+    font-family: $fontMain;
 
     overflow: hidden;
 
@@ -97,7 +83,7 @@ body::after{
 ///////////////////////////////////////nav///////////////////////////////////////////////
 
 .nav{
-    font-family: 'Montserrat', serif;
+    font-family: $fontNav;
     
     @include adaptive-value(font-size, 16, 13);
 }
@@ -134,15 +120,16 @@ body::after{
 
     cursor: inherit;
     transition: transform .3s;
-}
-.link--style::before{
-    font-weight: 700;
 
-    position: absolute;
-    top: 100%;
+    &::before{
+        font-weight: 700;
 
-    content: attr(data-hover);
-    transform: translate3d(0,0,0);
+        position: absolute;
+        top: 100%;
+
+        content: attr(data-hover);
+        transform: translate3d(0,0,0);
+    }
 }
 .menu__link:hover .link--style,
 .menu__link:focus .link--style{
@@ -164,16 +151,17 @@ body::after{
 
     text-align: center;
     text-transform: uppercase;
-}
-.title-column span{
-    font-size: 90px;
 
-    display: flex;
+    span{
+        font-size: 90px;
 
-    animation: icon3d 200ms 8;
-    animation-delay: .8s;
+        display: flex;
 
-    color: #fff;
+        animation: icon3d 200ms 8;
+        animation-delay: .8s;
 
-    justify-content: center;
+        color: #fff;
+
+        justify-content: center;
+    }
 }

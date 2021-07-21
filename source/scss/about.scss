@@ -1,8 +1,9 @@
 .about__content{
     position: absolute;
-    top: calc(50vh - 300px);
-    left: 17%;
-
+    top: 50%;
+    left: 200px;
+    
+    transform: translateY(-50%);
     font-size: 17px;
     line-height: 1.3;
     color: #000;
@@ -25,44 +26,45 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-}
-.content-about::before{
-    font-family: 'Montserrat', serif;
-    font-size: 150px;
-    font-weight: 700;
+    
+    &::before{
+        font-family: $fontNav;
+        font-size: 150px;
+        font-weight: 700;
 
-    position: absolute;
-    top: 0;
-    left: 15%;
+        position: absolute;
+        top: 0;
+        left: 15%;
 
-    content: 'About';
-    text-transform: uppercase;
+        content: 'About';
+        text-transform: uppercase;
 
-    opacity: .1;
-    color: rgb(33,150,243);
-    z-index: 0;
-}
-.content-about::after{
-    font-family: 'Montserrat', serif;
-    font-size: 100px;
-    font-weight: 700;
+        opacity: .1;
+        color: $color2;
+        z-index: 0;
+    }
+    &::after{
+        font-family: $fontNav;
+        font-size: 100px;
+        font-weight: 700;
 
-    position: absolute;
-    bottom: -5%;
-    left: -10%;
+        position: absolute;
+        bottom: -5%;
+        left: -10%;
 
-    content: 'Contacts';
-    text-transform: uppercase;
+        content: 'Contacts';
+        text-transform: uppercase;
 
-    opacity: .1;
-    color: rgb(244,67,54);
-    z-index: 0;
-}
-.content-about p:not(:last-child){
-    margin-bottom: 5px;
+        opacity: .08;
+        color: $color1;
+        z-index: 0;
+    }
+    p:not(:last-child){
+        margin-bottom: 5px;
+    }
 }
 .about__text{
-    font-family: "Kurale", serif;
+    font-family: $fontText;
     
     margin-bottom: 35px;
 }
@@ -75,10 +77,11 @@
     display: flex;
 
     justify-content: space-between;
-}
-.icon__container span{
-    transition: .4s linear;
-    display: flex;
+    
+    span{
+        transition: .4s linear;
+        display: flex;
+    }
 }
 .icon-html5:hover{
     color: #e54c27;
@@ -105,35 +108,37 @@
     font-size: 25px;
 
     display: flex;
-}
-.footer__contacts span{
-    display: flex;
 
-    margin-left: 20px;
-}
-.footer__contacts span:hover{
-    animation: icon3d 200ms 3;
+    span{
+        display: flex;
+
+        margin-left: 20px;
+
+        &:hover{
+           animation: icon3d 200ms 3; 
+        }
+    }
 }
 @keyframes icon3d{
     0%{
-        text-shadow: 2px 1px rgba(244,67,54,1), -2px -3px rgba(33,150,243,1);;
+        text-shadow: 2px 1px $color1, -2px -3px $color2;
     }
     25%{
-        text-shadow: -2px -3px rgba(244,67,54,1), 2px 1px rgba(33,150,243,1);;
+        text-shadow: -2px -3px $color1, 2px 1px $color2;
     }
     50%{
-        text-shadow: 2px -1px rgba(244,67,54,1), -5px 1px rgba(33,150,243,1);;
+        text-shadow: 2px -1px $color1, -5px 1px $color2;
     }
     75%{
-        text-shadow: -5px -1px rgba(244,67,54,1), -2px -1px rgba(33,150,243,1);;
+        text-shadow: -5px -1px $color1, -2px -1px $color2;
     }
     100%{
-        text-shadow: -2px 0 rgba(244,67,54,1), 2px -1px rgba(33,150,243,1);;
+        text-shadow: -2px 0 $color1, 2px -1px $color2;
     }
 }
 
 .footer__download{
-    font-family: 'Montserrat', serif;
+    font-family: $fontNav;
     font-size: 15px;
     font-weight: 500;
 
@@ -142,23 +147,24 @@
 .download{
     position: relative;
     transition: .5s;
-}
-.download:hover{
-    color: #000;
-}
-.download::before{
-    position: absolute;
-    bottom: -2px;
-    left: 0;
 
-    width: 0;
-    height: 1.5px;
+    &:hover{
+        color: #000;
+    }
+    &::before{
+        position: absolute;
+        bottom: -2px;
+        left: 0;
 
-    content: '';
-    transition: .5s;
+        width: 0;
+        height: 1.5px;
 
-    background-color: rgb(33,150,243);
-}
-.download:hover::before{
-    width: 100%;
+        content: '';
+        transition: .5s;
+
+        background-color: $color2;
+    }
+    &:hover::before{
+        width: 100%;
+    }
 }
