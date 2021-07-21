@@ -14,11 +14,10 @@
 
     position: absolute;
     z-index: 5;
-    top: calc(50vh - 280px);
-    left: 470px;
+    @include centering(280, 300);
 
     transition: 2s linear;
-
+    
     opacity: 0;
     color: #fff;
 }
@@ -29,8 +28,7 @@
 
     position: absolute;
     z-index: 10;
-    top: -350px;
-    left: 58%;
+    @include centering(700, -120);
 
     display: flex;
 
@@ -38,7 +36,7 @@
 }
 .works__slider{
     position: relative;
-    @include centering(225, 270);
+    @include centering(225, 252);
 
     display: flex;
 
@@ -59,7 +57,7 @@
     &:hover > img{
         transform: translateY(-80px);
         transition-delay: .2s;
-    }    
+    }
 }
 .slick-slide{
     @include adaptive-value(margin-right, 300, -50);
@@ -94,7 +92,6 @@
 .slick-dots li.slick-active button{
     background-color: $color2;
 }
-
 
 .slider__links{
     font-family: $fontNav;
@@ -174,4 +171,10 @@
 
     transition: .45s;
     transform: translateY(300%);
+}
+
+@media screen and (max-width: 520px) {
+    .works .title-column{
+        display: none;
+    }
 }
