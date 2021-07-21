@@ -168,3 +168,24 @@
         width: 100%;
     }
 }
+
+@media screen and (max-width: 720px) {
+    .about__content{
+        left: calc(50vw - 250px);
+    }
+    .about .title-column{
+        display: none;
+    }
+}
+@media screen and (max-width: 520px) {
+    .about__content{
+        width: 95%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .content-about{
+        @include adaptive-value(padding-left, 250, 20);
+        @include adaptive-value(padding-right, 250, 20);
+        @include adaptive-value(padding-top, 250, 40);
+    }
+}
