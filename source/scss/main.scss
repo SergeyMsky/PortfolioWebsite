@@ -1,9 +1,27 @@
+/////////////////////////////////////////////MIXIN/////////////////////////////////////////////
+
+@mixin adaptive-value($property, $startSize, $minSize) {
+    $maxWidth: 1500;
+    $minWidth: 320;
+    $addSize: $startSize - $minSize;
+    $valueWidth: $maxWidth - $minWidth;
+    #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - #{$minWidth + px}) / #{$valueWidth}));
+}
+
+/////////////////////////////////////////////MIXIN/////////////////////////////////////////////
+
+
+
+////////////////////////////////////////////IMPORT/////////////////////////////////////////////
+
 @import "null.scss";
 @import "preloader.scss";
 @import "cursor.scss";
 @import "home.scss";
 @import "about.scss";
 @import "works.scss";
+
+////////////////////////////////////////////IMPORT/////////////////////////////////////////////
 
 body{
     font-family: 'GFS Didot', serif;
@@ -80,6 +98,8 @@ body::after{
 
 .nav{
     font-family: 'Montserrat', serif;
+    
+    @include adaptive-value(font-size, 16, 13);
 }
 .nav__menu{
     display: flex;

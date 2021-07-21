@@ -10,7 +10,7 @@
     text-align: justify;
     display: flex;
 
-    width: 450px;
+    width: 500px;
     height: 600px;
 }
 .content-about{
@@ -64,7 +64,7 @@
 .about__text{
     font-family: "Kurale", serif;
     
-    margin-bottom: 30px;
+    margin-bottom: 35px;
 }
 .about__icon{
     flex-grow: 1;
@@ -141,21 +141,23 @@
 }
 .download{
     position: relative;
-
-    padding-bottom: 2px;
+    transition: .5s;
+}
+.download:hover{
+    color: #000;
 }
 .download::before{
     position: absolute;
-    bottom: 0;
+    bottom: -2px;
     left: 0;
 
     width: 0;
     height: 1.5px;
 
     content: '';
-    transition: .3s;
+    transition: .5s;
 
-    background-color: #000;
+    background-color: rgb(33,150,243);
 }
 .download:hover::before{
     width: 100%;

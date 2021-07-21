@@ -15,38 +15,30 @@
     background-color: #000;
 }
 .preloader__title{
-    font-size: 60px;
-    line-height: 200px;
-
     position: absolute;
-    top: calc(50vh - 200px);
-    left: calc(50% - 800px);
+    top: 50%;
+    left: 50%;
 
-    width: 800px;
-    height: 200px;
+    transform: translate(-50%, -50%);
 
-    transform: translate(50%, 50%);
-    text-align: center;
     letter-spacing: 20px;
+    margin-left: 10px;
 
     opacity: .15;
     color: #fff;
+
+    @include adaptive-value(font-size, 60, 45);
 }
 .preloader__perc{
-    font-size: 100px;
-    line-height: 200px;
-
     position: absolute;
-    top: calc(50vh - 200px);
-    left: calc(50% - 600px) ;
+    top: 50%;
+    left: 50%;
 
-    width: 600px;
-    height: 200px;
-
-    transform: translate(50%, 50%);
-    text-align: center;
+    transform: translate(-50%, -50%);
 
     color: #fff;
+
+    @include adaptive-value(font-size, 100, 85);
 }
 #page-preloader.done{
     visibility: hidden;
@@ -55,8 +47,8 @@
 }
 .preloader__itm{
     position: absolute;
-    top: calc(60vh - 10px);
-    left: calc(50vw - 20px);
+    top: calc(60% - 10px);
+    left: calc(50vw - 10px);
 
     width: 20px;
     height: 20px;

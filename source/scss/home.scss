@@ -19,7 +19,7 @@
     display: flex;
     flex-direction: column;
 
-    min-width: 800px;
+    width: 800px;
     height: 200px;
 
     opacity: 0;
@@ -29,8 +29,13 @@
 }
 .title__box-text{
     font-family: 'Kurale', serif;
+    @include adaptive-value(font-size, 40, 25);
     
     display: flex;
+    align-items: center;
+}
+.box-text__itm:last-child{
+    margin-right: 0;
 }
 .box-text__itm{
     display: flex;
@@ -43,9 +48,23 @@
     flex-wrap: nowrap;
 }
 .box-text__itm span{
-    font-size: 40px;
-
     position: relative;
 
     display: inline-block;
 }
+
+
+@media screen and (max-width: 540px){
+    .title__box-text{
+        font-size: 35px;
+    }
+    .title__box-text:last-child{
+        flex-direction: column;
+    }
+    .title__box-text:last-child .box-text__itm{
+        margin-right: 0;
+    }
+}
+
+
+

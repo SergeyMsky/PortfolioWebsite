@@ -8,9 +8,11 @@ const moveNumber = document.querySelector('.works__progress-number')
 window.addEventListener('mousemove', function(e) {
 	let x = e.clientX / window.innerWidth
 	let y = e.clientY / window.innerHeight
-	moveText.style.transform = 'translate(' + x * 15 + 'px, ' + y * 15 + 'px)'
-	if (moveNumber) {
+	if (moveNumber && (window.matchMedia("(min-width: 768px)").matches)) {
 		moveNumber.style.transform = 'translate(-' + x * 18 + 'px, -' + y * 18 + 'px)'
+	}
+	if (window.matchMedia("(min-width: 768px)").matches) {
+		moveText.style.transform = 'translate(' + x * 15 + 'px, ' + y * 15 + 'px)'
 	}
 })
 
