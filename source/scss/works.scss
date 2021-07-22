@@ -1,22 +1,11 @@
-.menu__itm--first,
-.menu__itm--second{
-    position: absolute;
-    right: 25px;
-}
-.menu__itm--second{
-    bottom: 30px;
-}
-.menu__itm--first{
-    top: 30px;
-}
 .works__name--text{
     font-size: 30px;
 
     position: absolute;
     z-index: 5;
-    @include centering(280, 300);
+    @include centering(280, 270);
 
-    transition: 2s linear;
+    transition: 1s;
     
     opacity: 0;
     color: #fff;
@@ -36,18 +25,15 @@
 }
 .works__slider{
     position: relative;
-    @include centering(225, 252);
-
-    display: flex;
-
-    width: 100%;
-    height: 450px;
+    @include centering(225, 270);
 }
 .slider__itm{
     opacity: 0;
-    position: relative;
+
     overflow: hidden;
-    
+    max-width: 500px;
+    width: 100%;
+
     > img{
         width: 500px;
         height: 450px;
@@ -60,7 +46,7 @@
     }
 }
 .slick-slide{
-    @include adaptive-value(margin-right, 300, -50);
+    @include adaptive-value(margin-right, 300, -50, 1500);
 }
 .slick-track{
     display: flex;
@@ -68,12 +54,9 @@
 .slick-dots{
     position: absolute;
     top: 150%;
-    left: calc(260px - 170px);
+    left: 90px;
 
     display: flex;
-
-    align-items: center;
-    justify-content: center;
 
     button{
         font-size: 0;
@@ -173,8 +156,58 @@
     transform: translateY(300%);
 }
 
-@media screen and (max-width: 520px) {
+@media screen and (max-width: 800px){
     .works .title-column{
+        display: none;
+    }
+}
+@media screen and (max-width: 700px){
+    .works__name--text{
+        @include adaptive-value(left, 70, 10, 700);
+    }
+}
+@media screen and (max-width: 670px) {
+    .works__progress-number{
+        @include adaptive-value(left, 400, 200, 600);
+    }
+}
+@media screen and (max-width: 600px) {
+    .works__progress-number{
+        @include adaptive-value(font-size, 160, 90, 600);
+        @include adaptive-value(top, -340, -225, 600);
+    }
+}
+@media screen and (max-width: 530px){
+    .slider__itm > img{
+        width: 100%;
+
+        object-fit: contain;
+    }
+    .slick-slide{
+        margin-right: 0;
+    }
+    .slick-dots{
+        left: calc(50vw - 100px);
+
+        @include adaptive-value(top, 650, 560, 530);
+
+        button{
+           width: 80px; 
+        }
+    }
+}
+@media screen and (max-width: 500px){
+    .works__slider{
+        left: -20px;
+    }
+    .works__name--text{
+        @include adaptive-value(top, 90, 190, 500);
+        @include adaptive-value(font-size, 30, 23, 500);
+    }
+    .slider__itm{
+        pointer-events: none;
+    }
+    .slider__links{
         display: none;
     }
 }

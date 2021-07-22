@@ -68,3 +68,12 @@
     transition: transform .2s ease;
 }
 
+@media screen and (max-width: 1023px){
+    #cursor,
+    #aura{
+        display: none;
+    }
+    *{
+        cursor: auto;
+    }
+}

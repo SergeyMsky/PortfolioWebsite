@@ -1,8 +1,7 @@
 /////////////////////////////////////////////MIXIN/////////////////////////////////////////////
 
-@mixin adaptive-value($property, $startSize, $minSize) {
-    $maxWidth: 1500;
-    $minWidth: 320;
+@mixin adaptive-value($property, $startSize, $minSize, $maxWidth) {
+	$minWidth: 320;
     $addSize: $startSize - $minSize;
     $valueWidth: $maxWidth - $minWidth;
     #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - #{$minWidth + px}) / #{$valueWidth}));

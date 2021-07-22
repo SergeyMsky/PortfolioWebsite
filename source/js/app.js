@@ -8,10 +8,10 @@ const moveNumber = document.querySelector('.works__progress-number')
 window.addEventListener('mousemove', function(e) {
 	let x = e.clientX / window.innerWidth
 	let y = e.clientY / window.innerHeight
-	if (moveNumber && (window.matchMedia("(min-width: 768px)").matches)) {
+	if (moveNumber && (window.matchMedia("(min-width: 1023px)").matches)) {
 		moveNumber.style.transform = 'translate(-' + x * 18 + 'px, -' + y * 18 + 'px)'
 	}
-	if (window.matchMedia("(min-width: 768px)").matches) {
+	if (window.matchMedia("(min-width: 1023px)").matches) {
 		moveText.style.transform = 'translate(' + x * 15 + 'px, ' + y * 15 + 'px)'
 	}
 })
@@ -55,9 +55,15 @@ if(!preloader.classList.contains('done')){
 		  	opacity: 1,
 		});
 		anime({
+		  	targets: '.content-about',
+		  	translateX: 0,
+		  	delay: anime.stagger(500),
+		  	opacity: 1,
+		});
+		anime({
 		  	targets: '.slick-dots button',
 		  	translateY: -170,
-		  	delay: anime.stagger(100),
+		  	delay: anime.stagger(100, {start: 650}),
 		  	opacity: 1,
 		});
 		menuItm.forEach(element => {element.style.opacity = '1'})

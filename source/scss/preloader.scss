@@ -27,7 +27,7 @@
     opacity: .15;
     color: #fff;
 
-    @include adaptive-value(font-size, 60, 45);
+    @include adaptive-value(font-size, 60, 45, 1500);
 }
 .preloader__perc{
     position: absolute;
@@ -38,7 +38,7 @@
 
     color: #fff;
 
-    @include adaptive-value(font-size, 100, 85);
+    @include adaptive-value(font-size, 100, 85, 1500);
 }
 #page-preloader.done{
     visibility: hidden;

@@ -15,6 +15,14 @@ $(document).ready(function(){
 			touchThreshold: 100,
 			variableWidth: true,
 			speed: 1500,
+			responsive: [
+		    {
+		      breakpoint: 530,
+		      	settings: {
+		        variableWidth: false
+		      }
+		    }
+		  ]
 		})
 	}
 })
