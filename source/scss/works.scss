@@ -1,5 +1,5 @@
 .works__name--text{
-    font-size: 30px;
+    @include adaptive-value(font-size, 30, 23, 1536);
 
     position: absolute;
     z-index: 5;
@@ -13,7 +13,7 @@
 
 .works__progress-number{
     font-family: $fontNumber;
-    font-size: 160px;
+    @include adaptive-value(font-size, 160, 90, 1536);
 
     position: absolute;
     z-index: 10;
@@ -81,8 +81,8 @@
 
 .slider__links{
     font-family: $fontNav;
-    font-size: 18px;
     font-weight: 500;
+    font-size: 18px;
 
     position: absolute;
     bottom: 0;
@@ -111,7 +111,10 @@
 
     overflow: hidden;
 
-    padding: 10px 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    @include adaptive-value(padding-left, 20, 10, 1536);
+    @include adaptive-value(padding-right, 20, 10, 1536);
 
     &:first-child{
         margin-right: 40px;
@@ -147,10 +150,6 @@
     }
 
 }
-.slider-link:hover::before,
-.slider-link:hover .slider__icon-svg{
-    transform: translateY(0);
-}
 .slider__icon-svg{
     position: absolute;
     @include centering(12.5, 12.5);
@@ -162,6 +161,16 @@
     transform: translateY(300%);
 }
 
+
+
+
+
+@media screen and (min-width: 500px){
+    .slider-link:hover::before,
+    .slider-link:hover .slider__icon-svg{
+        transform: translateY(0);
+    }
+}
 @media screen and (max-width: 800px){
     .works .title-column{
         display: none;
@@ -179,7 +188,6 @@
 }
 @media screen and (max-width: 600px) {
     .works__progress-number{
-        @include adaptive-value(font-size, 160, 90, 600);
         @include adaptive-value(top, -340, -225, 600);
     }
 }
@@ -209,14 +217,16 @@
     }
     .works__name--text{
         @include adaptive-value(top, 90, 190, 500);
-        @include adaptive-value(font-size, 30, 23, 500);
     }
-    .slider-link{
+    .slider__links{
         @include adaptive-value(font-size, 18, 13, 500);
-        @include adaptive-value(padding-left, 20, 10, 500);
-        @include adaptive-value(padding-right, 20, 10, 500);
     }
-    .slider__icon-svg{
-        display: none;
-    }
+}
+
+canvas { 
+    display: block; 
+    position: fixed;
+    z-index: -1; // put it to background
+    left: 0; // position it to fill the whole screen
+    top: 0; // position it to fill the whole screen
 }

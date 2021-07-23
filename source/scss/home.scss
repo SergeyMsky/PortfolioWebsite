@@ -2,7 +2,7 @@
     position: absolute;
     @include centering(200, 150);
 
-    transition: 3s all linear;
+    transition: 2s all linear;
 
     opacity: 0;
 
@@ -29,7 +29,7 @@
 }
 .title__box-text{
     font-family: $fontText;
-    @include adaptive-value(font-size, 40, 25, 1500);
+    @include adaptive-value(font-size, 40, 25, 1536);
     
     display: flex;
     align-items: center;
@@ -63,9 +63,30 @@
         display: inline-block; 
     }
 }
+.home .footer__contacts{
+    font-size: 20px;
 
+    position: absolute;
+    right: 1%;
+    bottom: 2%;
 
+    flex-direction: column;
 
+    color: #fff;
 
+    span{
+        margin-top: 20px;
+        margin-left: 0;
 
+        transform: translateY(200px);
+    }
 
+    @media screen and (max-width: 450px) {
+        flex-direction: row;
+        right: 4%;
+        
+        span{
+            margin: 0 0 0 20px;
+        }
+    }
+}

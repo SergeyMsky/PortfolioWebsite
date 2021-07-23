@@ -20,7 +20,7 @@ function imageLoaded() {
 			if (!preloader.classList.contains('done')) {
 				preloader.classList.add('done')
 			}
-		}, 100);
+		}, 500);
 	}
 }
 
@@ -30,5 +30,5 @@ if (imagesTotalCount <= 0) {
 		if (!preloader.classList.contains('done')) {
 			preloader.classList.add('done')
 		}
-	}, 200);
+	}, 500);
 }

@@ -19,7 +19,10 @@
 
     overflow: hidden;
 
-    padding: 60px 60px 20px;
+    @include adaptive-value(padding-top, 60, 40, 1536);
+    @include adaptive-value(padding-left, 60, 20, 1536);
+    @include adaptive-value(padding-right, 60, 20, 1536);
+    padding-bottom: 20px;
 
     background-color: #efefef;
     
@@ -187,9 +190,5 @@
         left: 50%;
         transform: translate(-50%, -50%);
     }
-    .content-about{
-        @include adaptive-value(padding-left, 60, 20, 520);
-        @include adaptive-value(padding-right, 60, 20, 520);
-        @include adaptive-value(padding-top, 60, 40, 520);
-    }
+
 }
