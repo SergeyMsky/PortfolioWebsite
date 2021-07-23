@@ -78,22 +78,5 @@ if(!preloader.classList.contains('done')){
 }
 
 
-// if(window.matchMedia("(max-width: 500px)").matches){
-
-// 	document.querySelectorAll('.slider__itm > img').forEach(n => {
-// 	const link = document.createElement('a')
-// 	n.parentNode.append(link)
-// 	link.append(n)
-// 	link.setAttribute('target', '_blank')
-// 	})
-
-// 	const l = document.querySelectorAll('.slider__links + a')
-
-// 	l[0].setAttribute('href', 'https://developer.mozilla.org/ru/docs/Web/API/Element/setAttribute')
-// 	l[1].setAttribute('href', 'https://developer.mozilla.org/ru/docs/Web/API/Element/setAttribute')
-// 	l[2].setAttribute('href', 'https://developer.mozilla.org/ru/docs/Web/API/Element/setAttribute')
-// }
-
-
 
 
