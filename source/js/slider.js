@@ -19,7 +19,9 @@ $(document).ready(function(){
 		    {
 		      breakpoint: 530,
 		      	settings: {
-		        variableWidth: false
+		        variableWidth: false,
+		        speed: 300,
+		        touchThreshold: 5,
 		      }
 		    }
 		  ]

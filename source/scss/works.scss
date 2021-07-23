@@ -25,7 +25,10 @@
 }
 .works__slider{
     position: relative;
-    @include centering(225, 270);
+    top: 50%;
+    left: calc(50vw - 270px);
+
+    transform: translateY(-50%);
 }
 .slider__itm{
     opacity: 0;
@@ -131,14 +134,18 @@
         transition: transform .4s, opacity .4s;
         transition-delay: .3s;
     }
-    &:hover span{
-        display: block;
 
-        transition-delay: 0s;
-        transform: translateY(-150%);
+    @media screen and (min-width: 500px) {
+        &:hover span{
+            display: block;
 
-        opacity: 0;
+            transition-delay: 0s;
+            transform: translateY(-150%);
+
+            opacity: 0;
+        }
     }
+
 }
 .slider-link:hover::before,
 .slider-link:hover .slider__icon-svg{
@@ -146,8 +153,7 @@
 }
 .slider__icon-svg{
     position: absolute;
-    top: calc(50% - 12.5px);
-    left: calc(50% - 12.5px);
+    @include centering(12.5, 12.5);
 
     width: 25px;
     height: 25px;
@@ -180,6 +186,7 @@
 @media screen and (max-width: 530px){
     .slider__itm > img{
         width: 100%;
+        height: 100%;
 
         object-fit: contain;
     }
@@ -204,10 +211,12 @@
         @include adaptive-value(top, 90, 190, 500);
         @include adaptive-value(font-size, 30, 23, 500);
     }
-    .slider__itm{
-        pointer-events: none;
+    .slider-link{
+        @include adaptive-value(font-size, 18, 13, 500);
+        @include adaptive-value(padding-left, 20, 10, 500);
+        @include adaptive-value(padding-right, 20, 10, 500);
     }
-    .slider__links{
+    .slider__icon-svg{
         display: none;
     }
 }

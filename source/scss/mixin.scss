@@ -7,8 +7,8 @@
     #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - #{$minWidth + px}) / #{$valueWidth}));
 }
 @mixin centering($height, $width) {
-	#{top}: calc(50vh - #{$height + px});
-	#{left}: calc(50vw - #{$width + px});
+	#{top}: calc(50% - #{$height + px});
+	#{left}: calc(50% - #{$width + px});
 }
 
 $redColor: rgb(244,67,54); 
