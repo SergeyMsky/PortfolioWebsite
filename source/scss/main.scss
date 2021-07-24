@@ -20,7 +20,7 @@ body{
         -ms-user-select: none;
             user-select: none;
 
-    background: #000;
+    background: #070707;
     width: 100vw;
     height: 100vh;
 
@@ -36,10 +36,8 @@ body{
         content: '';
         animation: grain 8s steps(10) infinite;
 
-        opacity: 1;
         background-image: url('../img/backgraund.jpg');
-        background-size: 130px 130px;
-        opacity: .22;
+        opacity: .11;
     }
 }
 header{
