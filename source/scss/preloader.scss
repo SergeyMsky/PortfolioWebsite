@@ -64,28 +64,6 @@
 
     border-radius: 50%;
     background-color: #fff;
-}
-.preloader__itm--shape-1{
-    animation: moveCircle1 700ms ease-in-out infinite alternate;
-}
-@keyframes moveCircle1{
-    0%{
-        transform: translateX(30px);
-    }
-    100%{
-        transform: translateX(-30px);
-        background-color: $color1;
-    }
-}
-.preloader__itm--shape-2{
-    animation: moveCircle2 700ms ease-in-out infinite alternate;
-}
-@keyframes moveCircle2{
-    0%{
-        transform: translateX(-30px);
-    }
-    100%{
-        transform: translateX(30px);
-        background-color: $color2;
-    }
+
+    transform: translate(50%, 50%);
 }

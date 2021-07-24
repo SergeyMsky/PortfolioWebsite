@@ -1,15 +1,28 @@
 .main__photo{
     position: absolute;
-    @include centering(200, 150);
+    overflow: hidden;
 
     transition: 2s all linear;
 
+    @include centering(200, 150);
+}
+.photo__overlay{
+    position: absolute;
+    z-index: 10;
+    top: -100%;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: #bab8b6;
+    opacity: .5;
+}
+.photo{
     opacity: 0;
 
-    img{
-        width: 300px;
-        height: 400px;
-    }
+    width: 300px;
+    height: 400px;
+    z-index: 100;
 }
 
 .title__container{
@@ -64,11 +77,11 @@
     }
 }
 .home .footer__contacts{
-    font-size: 20px;
+    font-size: 22px;
 
     position: absolute;
-    right: 1%;
-    bottom: 2%;
+    right: 15px;
+    bottom: 15px;
 
     flex-direction: column;
 
@@ -83,7 +96,6 @@
 
     @media screen and (max-width: 450px) {
         flex-direction: row;
-        right: 4%;
         
         span{
             margin: 0 0 0 20px;

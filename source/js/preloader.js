@@ -19,6 +19,10 @@ function imageLoaded() {
 		setTimeout(function (){
 			if (!preloader.classList.contains('done')) {
 				preloader.classList.add('done')
+				setTimeout(function (){
+					p1.remove()
+					p2.remove()
+				}, 2000);
 			}
 		}, 500);
 	}
@@ -29,6 +33,22 @@ if (imagesTotalCount <= 0) {
 	setTimeout(function (){
 		if (!preloader.classList.contains('done')) {
 			preloader.classList.add('done')
+			setTimeout(function (){
+				p1.remove()
+				p2.remove()
+			}, 2000);
 		}
 	}, 500);
 }
+
+const p1 = document.querySelector('.preloader__itm--shape-1')
+const p2 = document.querySelector('.preloader__itm--shape-2')
+
+anime({targets: p1, 
+	translateX: [-40, 40], loop: true, direction: 'alternate', easing: 'easeInOutQuad', 
+	backgroundColor: 'rgb(244,67,54)', duration: 900,});
+anime({targets: p2, 
+	translateX: [40, -40], loop: true, direction: 'alternate', easing: 'easeInOutQuad', 
+	backgroundColor: 'rgb(33,150,243)', duration: 900,});
+
+

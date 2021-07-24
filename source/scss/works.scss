@@ -204,7 +204,7 @@
     .slick-dots{
         left: calc(50vw - 100px);
 
-        @include adaptive-value(top, 650, 560, 530);
+        @include adaptive-value(top, 660, 500, 530);
 
         button{
            width: 80px; 
@@ -221,12 +221,4 @@
     .slider__links{
         @include adaptive-value(font-size, 18, 13, 500);
     }
-}
-
-canvas { 
-    display: block; 
-    position: fixed;
-    z-index: -1; // put it to background
-    left: 0; // position it to fill the whole screen
-    top: 0; // position it to fill the whole screen
 }

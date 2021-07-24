@@ -20,14 +20,14 @@ body{
         -ms-user-select: none;
             user-select: none;
 
-    background: #171717;
+    background: #000;
     width: 100vw;
     height: 100vh;
 
     &::after{
         position: fixed;
         z-index: -1;
-        top: -100%;
+        top: -110%;
         left: -50%;
 
         width: 300%;
@@ -37,8 +37,9 @@ body{
         animation: grain 8s steps(10) infinite;
 
         opacity: 1;
-        background-image: url('../img/backgraund.png');
-        background-size: 200px 200px;
+        background-image: url('../img/backgraund.jpg');
+        background-size: 130px 130px;
+        opacity: .22;
     }
 }
 header{
