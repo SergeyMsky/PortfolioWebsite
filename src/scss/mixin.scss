@@ -1,0 +1,95 @@
+/////////////////////////////////////////////MIXIN/////////////////////////////////////////////
+
+@mixin adaptive-value($property, $startSize, $minSize, $maxWidth) {
+   $minWidth: 320;
+   $addSize: $startSize - $minSize;
+   $valueWidth: $maxWidth - $minWidth;
+   #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - #{$minWidth + px}) / #{$valueWidth}));
+}
+
+@mixin centering($height, $width) {
+   #{top}: calc(50% - #{$height + px});
+   #{left}: calc(50% - #{$width + px});
+}
+
+@mixin сentering-xy() {
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+}
+
+@mixin pseudo($content: '') {
+   content: $content;
+   display: block;
+   position: absolute;
+}
+
+/////////////////////////////////////////////MIXIN/////////////////////////////////////////////
+
+/////////////////////////////////////////////COLOR/////////////////////////////////////////////
+
+$redColor: rgb(244, 67, 54);
+$blueColor: rgb(33, 150, 243);
+
+$color1: $redColor;
+$color2: $blueColor;
+
+/////////////////////////////////////////////COLOR/////////////////////////////////////////////
+
+/////////////////////////////////////////////FONTS/////////////////////////////////////////////
+
+$fontMain: 'GFS Didot', serif;
+$fontNav: 'Montserrat', serif;
+$fontText: 'Kurale', serif;
+$fontNumber: 'Abril Fatface', serif;
+
+/////////////////////////////////////////////FONTS/////////////////////////////////////////////
+
+@font-face {
+   font-family: 'icons';
+   src: url('../fonts/icons.eot?pzwqg2');
+   src: url('../fonts/icons.eot?pzwqg2#iefix') format('embedded-opentype'), url('../fonts/icons.ttf?pzwqg2') format('truetype'), url('../fonts/icons.woff?pzwqg2') format('woff'), url('../fonts/icons.svg?pzwqg2#icons') format('svg');
+   font-weight: normal;
+   font-style: normal;
+   font-display: block;
+}
+
+[class^='icon-']::before,
+[class*=' icon-']::before {
+   font-family: 'icons' !important;
+   speak: never;
+   font-style: normal;
+   font-weight: normal;
+   font-variant: normal;
+   text-transform: none;
+   line-height: 1;
+
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-instagram:before {
+   content: '\e901';
+}
+.icon-github:before {
+   content: '\eab0';
+}
+.icon-linkedin:before {
+   content: '\eac9';
+}
+.icon-telegram:before {
+   content: '\e905';
+}
+.icon-html5:before {
+   content: '\e904';
+}
+.icon-css3:before {
+   content: '\e900';
+}
+.icon-javascript:before {
+   content: '\e902';
+}
+.icon-jquery:before {
+   content: '\e903';
+}
